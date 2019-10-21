@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   delete 'signout', to: "sessions#destroy"
   # new = signup, show = user.page
   resources :users, only:  [:index, :show, :new, :create]
+  
+  resources :experiences, only: [:new, :create, :edit, :update, :destroy]
 end
