@@ -10,6 +10,7 @@
                 <p> <span class="mr-3"><%= experience.year %></span><%= experience.content %></p>
             </div>
             <% if current_user == experience.user %>
+            <%= link_to 'Edit', edit_experience_path(experience) %>
             <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" } %>
             <% end %>
         </div>

@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:destroy, :update]
  
   def new
     if logged_in?
@@ -21,9 +21,18 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
+    @experience = Experience.find(params[:id])
   end
 
   def update
+    @experience = Experience.find(params[:id])
+    if @experience.update(experience_params)
+      flash[:success] = '更新しました。'
+      redirect_to root_path
+    else
+      flash.now[:danger] = '更新されませんでした。'
+      render :edit
+    end
   end
   
   def destroy
