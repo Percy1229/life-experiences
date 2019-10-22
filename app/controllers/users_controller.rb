@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @experiences = @user.experiences.order(id: :desc).page(params[:page])
+
   end
 
   def new

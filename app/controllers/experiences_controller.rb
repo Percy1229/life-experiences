@@ -34,13 +34,11 @@ class ExperiencesController < ApplicationController
   
   private 
   def experience_params
-    params.require(:experience).permit(:content)
+    params.require(:experience).permit(:content, :year)
   end
   
   def correct_user
     @experience = current_user.experiences.find_by(id: params[:id])
-    unless @experinece
-    redirect_to root_url
-    end
+    redirect_to signin_url unless @experience
   end
 end

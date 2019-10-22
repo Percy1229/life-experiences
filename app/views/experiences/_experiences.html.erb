@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+    <% @experiences.each do |experience| %>
+    <li class="media mb-3 rounded">
+        <div class="media-body">
+            <div class="mb-2">
+                <%= link_to experience.user.name, user_path(experience.user) %>
+            </div>
+            <div>
+               
+                <p> <span class="mr-3"><%= experience.year %></span><%= experience.content %></p>
+            </div>
+            <% if current_user == experience.user %>
+            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" } %>
+            <% end %>
+        </div>
+    </li>
+    <% end %>
+</ul>

@@ -3,22 +3,6 @@
     <div class="text-center">
         <h1>Toppages</h1>
     </div>
-<ul class="list-unstyled">
-    <% @experiences.each do |experience| %>
-    <li class="media mb-3 rounded">
-        <div class="media-body">
-            <div>
-                <%= link_to experience.user.name, user_path(experience.user) %>
-            </div>
-            <div>
-                <p><%= experience.content %></p>
-            </div>
-            <% if current_user == experience.user %>
-            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" } %>
-            <% end %>
-        </div>
-    </li>
-    <% end %>
-</ul>
+<%= render 'experiences/experiences', experiences: @experiences %>
 </div>
 <% end %>
