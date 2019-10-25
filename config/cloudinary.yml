@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dbjdtcebw
+  api_key: '483254376947453'
+  api_secret: nn3TvTZQ-QA_YSlYoaDhilKzEHw
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dbjdtcebw
+  api_key: '483254376947453'
+  api_secret: nn3TvTZQ-QA_YSlYoaDhilKzEHw
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dbjdtcebw
+  api_key: '483254376947453'
+  api_secret: nn3TvTZQ-QA_YSlYoaDhilKzEHw
+  enhance_image_tag: true
+  static_file_support: false

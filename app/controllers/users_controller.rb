@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show]
+  before_action :require_user_logged_in, only: [:index, :show, :likes]
   def index
   end
 
@@ -25,8 +25,33 @@ class UsersController < ApplicationController
     end 
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = 'ユーザー情報を更新しました。'
+      render :edit
+    else
+      flash.now[:danger] = 'ユーザー情報を更新されませんでした。'
+      render :edit
+    end
+  end
+  
+  
+  
+  def likes 
+    @user = User.find(params[:id])
+    @users = User.all
+    @likes = @user.likes.page(params[:page])
+  end
+  
   private
   def user_params 
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduce, :image)
+    params.require(:user).permit(
+      :name, :email, :password, :password_confirmation, :introduce, :image,
+       experiences_attributes:[:year_id, :content_id])
   end
 end

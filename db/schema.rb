@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_082154) do
+ActiveRecord::Schema.define(version: 2019_10_22_091220) do
 
   create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "year", limit: 2
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2019_10_21_082154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "favorite_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favorite_id"], name: "index_relationships_on_favorite_id"
+    t.index ["user_id", "favorite_id"], name: "index_relationships_on_user_id_and_favorite_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,4 +42,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_082154) do
   end
 
   add_foreign_key "experiences", "users"
+  add_foreign_key "relationships", "experiences", column: "favorite_id"
+  add_foreign_key "relationships", "users"
 end

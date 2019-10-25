@@ -1,7 +1,5 @@
 <ul class="list-unstyled">
-    <% users.each do |user| %>
-    <%= user.name %>
-    <% user.experiences.each do |experience| %>
+    <% experiences.each do |experience| %>
     <li>
             <div class="row">
                 <div class="col-3"><%= experience.year %></div>
@@ -14,6 +12,4 @@
             <%= render 'relationships/favorite_button', experience: experience %> 
     </li>
     <% end %>
-    <% end %>
-
 </ul>
