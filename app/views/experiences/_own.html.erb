@@ -1,15 +1,19 @@
 <ul class="list-unstyled">
     <% experiences.each do |experience| %>
     <li>
+        <div class="border">
             <div class="row">
-                <div class="col-3"><%= experience.year %></div>
-                <div class="col-9"><%= experience.content %></div>
+                <div class="col-3"><p><%= experience.year %></p></div>
+                <div class="col-9"><p><%= experience.content %></p></div>
             </div>
+            <div class="text-right">
             <% if current_user == experience.user %>
-            <%= link_to 'Edit', edit_experience_path(experience) %>
-            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" } %>
+            <%= link_to 'Edit', edit_experience_path(experience), class: 'mr-1' %>
+            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" }, class: 'mr-2' %>
             <% end %>
             <%= render 'relationships/favorite_button', experience: experience %> 
+            </div>
+        </div>
     </li>
     <% end %>
 </ul>

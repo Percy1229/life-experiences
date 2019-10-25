@@ -60,4 +60,4 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'cloudinary'
 
-gem 'rmagick'
+
