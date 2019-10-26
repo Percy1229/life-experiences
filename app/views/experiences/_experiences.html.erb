@@ -1,11 +1,11 @@
 <ul class="list-unstyled">
     <% users.each do |user| %>
     <% if user.experiences.any? %>
-    <div class="mb-1"><%= user.name %></div>
+    <div class="pb-1 pt-3"><%= user.name %></div>
     <% user.experiences.each do |experience| %>
     <li> 
         <div class="border">
-            <div class="row">
+            <div class="row ml-1 mt-2">
                 <div class="col-3"><p><%= experience.year %></p></div>
                 <div class="col-9"><p><%= experience.content %></p></div>
             </div>
