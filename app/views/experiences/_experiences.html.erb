@@ -1,7 +1,16 @@
 <ul class="list-unstyled">
     <% users.each do |user| %>
     <% if user.experiences.any? %>
-    <div class="pb-1 pt-3"><%= user.name %></div>
+    <div class="pb-2 pt-3">
+        <span class="mr-1">
+        <% if user.img? %>
+        <%= image_tag(user.img_url, width: 30, height: 30, class: 'rounded-circle') %>
+        <% else %>
+        <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 30, height: 30, class: 'rounded-circle') %>
+        <% end %>
+        </span>
+        <%= user.name %>
+    </div>
     <% user.experiences.order(year: "DESC").each do |experience| %>
     <li> 
         <div class="border">
