@@ -1,7 +1,8 @@
-class CloudinaryImageUploader < CarrierWave::Uploader::Base
+class UserUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
@@ -44,23 +45,4 @@ class CloudinaryImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  include Cloudinary::CarrierWave
-  
-    process :convert => 'png'
-    process :tag => ['image']
-    process resize_to_fit: [700, 700]
-    
-    version :standard do
-      process :resize_to_fill => [100, 150, :north]
-    end
-    
-    version :thumb do
-      process :resize_to_fit => [50, 50]
-    end
-    
-    if Rails.env.production?
-      include Cloudinary::CarrierWave
-    else
-      include CarrierWave::RMagick
-    end
 end

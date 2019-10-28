@@ -7,7 +7,13 @@
             </div>
         </div>
             <div class="card-body">
-                <img>
+                <div>
+                <% if @user.img? %>
+                <%= image_tag(@user.img_url, width: 80, height: 80) %>
+                <% else %>
+                <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 80, height: 80) %>
+                <% end %>
+                </div><br>
                 <%= @user.introduce %><br>
                 <% if current_user == @user %>
                 <%= link_to 'Profile変更', edit_user_path(current_user) %>

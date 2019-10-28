@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :introduce, length: { maximum: 255 }
     
     has_secure_password
-
+    mount_uploader :img, UserUploader
     
     has_many :experiences
     has_many :relationships 
