@@ -42,6 +42,6 @@ ActiveRecord::Schema.define(version: 2019_10_22_091220) do
   end
 
   add_foreign_key "experiences", "users"
-  add_foreign_key "relationships", "experiences", column: "favorite_id"
   add_foreign_key "relationships", "users"
+  add_foreign_key "relationships", "users", column: "favorite_id"
 end

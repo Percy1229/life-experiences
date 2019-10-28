@@ -2,10 +2,10 @@
     <% users.each do |user| %>
     <% if user.experiences.any? %>
     <div class="pb-1 pt-3"><%= user.name %></div>
-    <% user.experiences.each do |experience| %>
+    <% user.experiences.order(year: "DESC").each do |experience| %>
     <li> 
         <div class="border">
-            <div class="row ml-1 mt-2">
+            <div class="row">
                 <div class="col-3"><p><%= experience.year %></p></div>
                 <div class="col-9"><p><%= experience.content %></p></div>
             </div>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="text-right">
-            <%= render 'relationships/favorite_button', experience: experience %> 
+            <%= render 'relationships/favorite_button', user: user %> 
         </div>
     </li>
     <% end %>
