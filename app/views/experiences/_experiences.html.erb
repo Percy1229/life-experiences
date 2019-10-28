@@ -9,12 +9,12 @@
         <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 30, height: 30, class: 'rounded-circle') %>
         <% end %>
         </span>
-        <%= user.name %>
+        <%= link_to user.name, user_path(user) %>
     </div>
     <% user.experiences.order(year: "DESC").each do |experience| %>
     <li> 
         <div class="border">
-            <div class="row">
+            <div class="row pt-3 pl-4">
                 <div class="col-3"><p><%= experience.year %></p></div>
                 <div class="col-9"><p><%= experience.content %></p></div>
             </div>
