@@ -8,8 +8,8 @@
             </div>
             <div class="text-right">
             <% if current_user == experience.user %>
-            <%= link_to 'Edit', edit_experience_path(experience), class: 'mr-1' %>
-            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" }, class: 'mr-2' %>
+            <%= link_to 'Edit', edit_experience_path(experience), class: 'p-2 text-primary' %>
+            <%= link_to "Delete", experience, method: :delete, data: { confirm: "削除してよろしいですか?" }, class: 'p-2 text-danger' %>
             <% end %>
             </div>
         </div>

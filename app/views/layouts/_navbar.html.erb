@@ -1,5 +1,5 @@
 <header class="mb-4">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info">
         <a class="navbar-brand" href="/">GoThrough</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -15,12 +15,12 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         Profile
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-right bg-dark">
-                        <li class="dropdown-item bg-dark"><%= link_to 'Profile', user_path(current_user), class: 'nav-link' %></li>
+                    <ul class="dropdown-menu dropdown-menu-right bg-info">
+                        <li class="dropdown-item bg-info"><%= link_to 'Profile', user_path(current_user), class: 'nav-link' %></li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item bg-dark"><%= link_to 'Edit profile', edit_user_path(current_user), class: 'nav-link' %></li>
+                        <li class="dropdown-item bg-info"><%= link_to 'Edit profile', edit_user_path(current_user), class: 'nav-link' %></li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item bg-dark"><%= link_to 'Signout', signout_path, method: :delete, class: 'nav-link' %></li>
+                        <li class="dropdown-item bg-info"><%= link_to 'Signout', signout_path, method: :delete, class: 'nav-link' %></li>
                     </ul>
                 </li>
                 <% else %>
