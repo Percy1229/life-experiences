@@ -8,20 +8,21 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <% if logged_in? %>
+                <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
+                <li class="nav-item"><%= link_to 'Share Experience', new_experience_path, class: 'nav-link' %></li>
+                
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Home
+                        Profile
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right bg-dark">
-                        <li class="dropdown-item bg-dark"><%= link_to 'Top', root_path %></li>
+                        <li class="dropdown-item bg-dark"><%= link_to 'Profile', user_path(current_user), class: 'nav-link' %></li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item bg-dark">
-                            <%= link_to 'Signout', signout_path, method: :delete %>
-                            </li>
+                        <li class="dropdown-item bg-dark"><%= link_to 'Edit profile', edit_user_path(current_user), class: 'nav-link' %></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item bg-dark"><%= link_to 'Signout', signout_path, method: :delete, class: 'nav-link' %></li>
                     </ul>
                 </li>
-                <li class="nav-item"><%= link_to 'Share Experience', new_experience_path, class: 'nav-link' %></li>
-                <li class="nav-item"><%= link_to 'Profile', user_path(current_user), class: 'nav-link' %></li>
                 <% else %>
                 <% end %>
             </ul>
