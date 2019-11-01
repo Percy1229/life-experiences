@@ -19,7 +19,7 @@
                 <% if current_user == @user %>
                 <%= link_to 'Profile変更', edit_user_path(current_user) %>
                 <% end %>
-                <p class="pt-1">Respected: <%= @count_liked %></p>
+                <p class="pt-1"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
             </div>
         </div>
     </aside>

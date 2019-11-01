@@ -13,4 +13,11 @@
  *= require_tree .
  *= require_self
  */
- 
+ .favorite {
+     color: #adff2f;
+     font-size: 1.5rem;
+ }
+ .unfavorite {
+     color: #EF938C;
+     font-size: 1.5rem;
+ }

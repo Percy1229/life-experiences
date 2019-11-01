@@ -2,14 +2,18 @@
 <% if current_user.like?(user) %>
 <%= form_with(model: current_user.relationships.find_by(favorite_id: user.id), local: true, method: :delete) do |f| %>
 <%= hidden_field_tag :favorite_id, user.id %>
-<%= f.submit 'Unfavorite', class: 'btn text-danger' %>
+<button type="submit" class="btn">
+    <i class="far fa-handshake unfavorite"></i>
+</button>
 <% end %>
 
 <% else %>
 
 <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
 <%= hidden_field_tag :favorite_id, user.id %>
-<%= f.submit 'Favorite', class: 'btn text-success' %>
+<button type="submit" class="btn">
+    <i class="far fa-handshake favorite"></i>
+</button>
 
 <% end %>
 <% end %>
