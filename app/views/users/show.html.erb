@@ -3,6 +3,7 @@
         <div class="card  text-center">
             <div class="card-header">
                 <div class="card-title">
+                <span><i class="<%= @crown %>"></i></span>
                 <%= @user.name %>
                 </div>
             </div>
@@ -19,6 +20,7 @@
                 <% if current_user == @user %>
                 <%= link_to 'Profile変更', edit_user_path(current_user) %>
                 <% end %>
+                <p class="pt-1">Respected: <%= @count_liked %></p>
             </div>
         </div>
     </aside>

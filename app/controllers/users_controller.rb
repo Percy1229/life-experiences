@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :likes]
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :likes]
   def index
   end
 
   def show
     @user = User.find(params[:id])
     @experiences = @user.experiences.order("year DESC").page(params[:page])
-
+    counts(@user)
+    if @count_liked >= 20
+      @crown = "fas fa-crown"
+    end
   end
 
   def new
@@ -46,6 +49,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = User.all
     @likes = @user.likes.page(params[:page])
+    counts(@user)
+    if @count_liked >= 20
+      @crown = "fas fa-crown"
+    end
+  end
+  
+  def liked 
+    @user = User.find(params[:id])
+    counts(@user)
   end
   
   private
