@@ -4,6 +4,7 @@
 <%= hidden_field_tag :favorite_id, user.id %>
 <button type="submit" class="btn">
     <i class="far fa-handshake unfavorite"></i>
+    <span class="unfavorite pl-1"><%= user.liked.count %></span>
 </button>
 <% end %>
 
@@ -13,6 +14,9 @@
 <%= hidden_field_tag :favorite_id, user.id %>
 <button type="submit" class="btn">
     <i class="far fa-handshake favorite"></i>
+    <% if user.liked.count != 0 %>
+     <span class="favorite pl-1"><%= user.liked.count %></span>
+    <% end %>
 </button>
 
 <% end %>

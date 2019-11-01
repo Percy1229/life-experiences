@@ -21,7 +21,7 @@
                 <%= link_to 'Profile変更', edit_user_path(current_user) %>
                 <% end %>
                 <% if @count_liked != 0 %>
-                <p class="pt-1"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
+                <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
                 <% end %>
             </div>
         </div>

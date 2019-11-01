@@ -1,5 +1,5 @@
 <% if logged_in? %>
 <div class="container">
-<%= render 'experiences/experiences', users: @users, experiences: @experiences %>
+<%= render 'experiences/experiences', users: @users, experiences: @experiences, liked: @liked %>
 </div>
 <% end %>

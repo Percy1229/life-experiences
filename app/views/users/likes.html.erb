@@ -17,9 +17,9 @@
                 </div><br>
                 <%= @user.introduce %><br>
                 <% if current_user == @user %>
-                <%= link_to 'Profile変更', edit_user_path(current_user) %>
+                <%= link_to 'Edit Profile', edit_user_path(current_user) %>
                 <% end %>
-                <p class="pt-1"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
+                <p class="pt-1 favorite"><span><i class="far fa-handshake favorite"></i> </span><%= @count_liked %></p>
             </div>
         </div>
     </aside>
@@ -39,6 +39,6 @@
                 </a>
             </li>
         </ul>
-<%= render 'experiences/experiences', users: @likes, experiences: @experiences %>
+<%= render 'experiences/experiences', users: @likes, experiences: @experiences, liked: @liked %>
     </div>
 </div>
