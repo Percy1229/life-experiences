@@ -6,4 +6,7 @@ def index
     @experiences = Experience.all.order("year DESC").page(params[:page])
   end
 end
+
+def guide 
+end 
 end
