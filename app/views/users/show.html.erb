@@ -15,15 +15,15 @@
                 <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 100, height: 100, class: 'rounded-circle') %>
                 <% end %>
                 </div><br>
-                <div class="py-3">
+                <div class="py-3 px-5 px-sm-0">
                 <%= raw(nl2br(@user.introduce)) %><br>
                 </div>
                 <div class="text-right text-sm-center">
                 <% if current_user == @user %>
                 <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-                <% if @count_liked != 0 %>
-                <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
                 <% end %>
+                 <% if @count_liked != 0 %>
+                <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
                 <% end %>
                 </div>
             </div>
