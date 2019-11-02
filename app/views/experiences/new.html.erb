@@ -3,11 +3,11 @@
 <%= form_with(model: @experience, local: true) do |f| %>
 <div class="form-group">
     <%= f.label :year, 'Year' %>
-    <%= f.number_field :year, class: 'form-control'%>
+    <%= f.number_field :year, class: 'form-control', placeholder: "Enter year"%>
 </div>
 <div class="form-group">
     <%= f.label :content, 'Experience' %>
-    <%= f.text_area :content, class: 'form-control' %>
+    <%= f.text_area :content, class: 'form-control', placeholder: "Enter your experience" %>
 </div>
 <%= f.submit 'POST', class: 'btn-primary btn-block' %>
 

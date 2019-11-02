@@ -1,28 +1,31 @@
 <div class="row">
     <aside class="col-sm-4">
-        <div class="card  text-center">
-            <div class="card-header">
+        <div class="card mb-2 mb-sm-0">
+            <div class="card-header text-center">
                 <div class="card-title">
                 <span><i class="<%= @crown %>"></i></span>
                 <%= @user.name %>
                 </div>
             </div>
             <div class="card-body">
-                <div>
+                <div class="text-center">
                 <% if @user.img? %>
                 <%= image_tag(@user.img_url, width: 100, height: 100, class: 'rounded-circle') %>
                 <% else %>
                 <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 100, height: 100, class: 'rounded-circle') %>
                 <% end %>
                 </div><br>
-                
-                <%= @user.introduce %><br>
+                <div class="py-3">
+                <%= raw(nl2br(@user.introduce)) %><br>
+                </div>
+                <div class="text-right text-sm-center">
                 <% if current_user == @user %>
-                <%= link_to 'Profile変更', edit_user_path(current_user) %>
-                <% end %>
+                <%= link_to 'Edit Profile', edit_user_path(current_user) %>
                 <% if @count_liked != 0 %>
                 <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
                 <% end %>
+                <% end %>
+                </div>
             </div>
         </div>
     </aside>

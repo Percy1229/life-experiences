@@ -6,6 +6,7 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
     validates :introduce, length: { maximum: 255 }
     
+    
     has_secure_password
     mount_uploader :img, UserUploader
     
