@@ -1,5 +1,6 @@
-<div class="content">
-<div class="container">
+<div class="content container">
+<div class="row">
+<div class="col-sm-6 offset-sm-3">
 <h1 class="pt-4 pb-2">Edit</h1>
 <%= form_with(model: @experience, local: true) do |f| %>
 <div class="form-group">
@@ -15,5 +16,6 @@
 <%= f.submit 'POST AGAIN', class: 'btn button btn-block' %>
 
 <% end %>
+</div>
 </div>
 </div>
