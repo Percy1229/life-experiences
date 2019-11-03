@@ -16,7 +16,7 @@ class ExperiencesController < ApplicationController
     else
       @experiences = current_user.experiences.order(id: :desc).page(params[:page])
       flash.now[:danger] = '経験をシェアできませんでした。'
-      render 'toppages/index'
+      render :new
     end
   end
 

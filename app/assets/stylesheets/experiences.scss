@@ -1,3 +1,21 @@
 // Place all the styles related to the experiences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+    color: #545454;
+    .button {
+            display: inline-block;
+          　padding: 0.5em 1em;
+          　text-decoration: none;
+            background: #C5E99B;
+            color: #FFF;
+            border-bottom: solid 4px #8CD790;
+            border-radius: 3px;
+            width: 200px;
+            }
+    .button:active {
+           -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+          border-bottom: none;
+      }
+}

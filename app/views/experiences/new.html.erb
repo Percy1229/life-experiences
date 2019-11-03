@@ -1,5 +1,6 @@
+<div class="content">
 <div class="container">
-<h1>Post</h1>
+<h1 class="pt-4 pb-2">Post</h1>
 <%= form_with(model: @experience, local: true) do |f| %>
 <div class="form-group">
     <%= f.label :year, 'Year' %>
@@ -9,7 +10,8 @@
     <%= f.label :content, 'Experience' %>
     <%= f.text_area :content, class: 'form-control', placeholder: "Enter your experience" %>
 </div>
-<%= f.submit 'POST', class: 'btn-primary btn-block' %>
+<%= f.submit 'POST', class: 'btn button btn-block' %>
 
 <% end %>
+</div>
 </div>

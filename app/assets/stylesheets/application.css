@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+ }
+ .navbar-brand {
+  font-family: 'Times New Roman',sans-serif;
+ }
  .favorite {
      color: #adff2f;
      font-size: 1.5rem;

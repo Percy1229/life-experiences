@@ -1,22 +1,28 @@
-<h1>Profile edit</h1>
+<div class="profile-edit container">
 <div class="row">
     <div class="col-sm-6 offset-sm-3">
+        <h1 class="pt-4 pb-2">Profile edit</h1>
+
         <%= form_with(model: @user, local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="form-group">
+            <i class="fa fa-user"></i> 
             <%= f.label :name, 'User name' %>
             <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
+            <i class="far fa-image"></i> 
             <%= f.label :img, 'Profile image' %>
             <%= f.file_field :img, class: 'form-control' %>
         </div>
         <div class="form-group">
+            <i class="far fa-address-card"></i> 
             <%= f.label :introduce, 'Introduce' %>
             <%= f.text_area :introduce, class: 'form-control' %>
         </div>
-        <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
+        <%= f.submit 'Save', class: 'btn button btn-block' %>
         
         <% end %>
+</div>
 </div>

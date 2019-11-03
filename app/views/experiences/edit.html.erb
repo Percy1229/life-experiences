@@ -1,16 +1,19 @@
+<div class="content">
 <div class="container">
-<h1>Edit</h1>
+<h1 class="pt-4 pb-2">Edit</h1>
 <%= form_with(model: @experience, local: true) do |f| %>
 <div class="form-group">
+    <i class="far fa-calendar-alt"></i> 
     <%= f.label :year, 'Year' %>
     <%= f.number_field :year, class: 'form-control'%>
 </div>
 <div class="form-group">
+    <i class="far fa-file-alt"></i> 
     <%= f.label :content, 'Experience' %>
     <%= f.text_area :content, class: 'form-control' %>
 </div>
-<%= f.submit 'POST AGAIN', class: 'btn-primary btn-block' %>
+<%= f.submit 'POST AGAIN', class: 'btn button btn-block' %>
 
 <% end %>
-
+</div>
 </div>
