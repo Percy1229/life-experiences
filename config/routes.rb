@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: "toppages#index"
-  get 'guide', to: 'toppages#guide'
   get 'relationships/create'
   get 'relationships/destroy'
   get 'signup', to: 'users#new'

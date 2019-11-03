@@ -15,13 +15,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </head>
 
-  <body>
-    <header>
+  <body class="m-0 p-0">
+    <header class="m-0 p-0">
       <%= render 'layouts/navbar' %>
     </header>
-    <div class="container">
       <%= render 'layouts/flash_messages' %>
     <%= yield %>
-    </div>
   </body>
 </html>

@@ -1,4 +1,3 @@
-<header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Go Through</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -10,7 +9,6 @@
                 <% if logged_in? %>
                 <li class="nav-item"><%= link_to 'Home', root_path, class: 'nav-link' %></li>
                 <li class="nav-item"><%= link_to 'Share Experience', new_experience_path, class: 'nav-link' %></li>
-                
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         Profile
@@ -31,4 +29,3 @@
             </ul>
         </div>
     </nav>
-</header>
