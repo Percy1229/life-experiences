@@ -1,11 +1,11 @@
-<div class="container mt-3">
+<div class="profile container mt-3">
 <div class="row">
     <aside class="col-sm-4">
         <div class="card mb-2 mb-sm-0">
             <div class="card-header text-center">
                 <div class="card-title">
-                <span><i class="<%= @crown %>"></i></span>
-                <%= @user.name %>
+                <h5 class="pt-2"><span><i class="<%= @crown %>"></i></span>
+                <%= @user.name %></h5>
                 </div>
             </div>
             <div class="card-body">
@@ -21,10 +21,11 @@
                 </div>
                 <div class="text-right text-sm-center">
                 <% if current_user == @user %>
-                <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+                <i class="far fa-edit edit"></i> 
+                <%= link_to 'Edit Profile', edit_user_path(current_user), class: 'edit' %>
                 <% end %>
                  <% if @count_liked != 0 %>
-                <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %></p>
+                <p class="pt-1 favorite"><span><i class="far fa-handshake"></i> </span><%= @count_liked %>likes</p>
                 <% end %>
                 </div>
             </div>

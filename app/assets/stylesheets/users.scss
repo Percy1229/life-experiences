@@ -38,3 +38,20 @@
           border-bottom: none;
       }
 }
+
+.profile {
+  .card-header {
+    background-color: rgba(140,215,144, 0.5);
+    .card-title {
+      color: #fff;
+      h5 {
+        font-size: 2rem;
+      }
+    }
+  }
+  .card-body {
+    .edit {
+      color: #FFC042;
+    }
+  }
+}
