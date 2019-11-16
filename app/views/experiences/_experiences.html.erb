@@ -6,7 +6,7 @@
         <% if user.img? %>
         <%= image_tag(user.img_url, width: 30, height: 30, class: 'rounded-circle') %>
         <% else %>
-        <%= image_tag('http://res.cloudinary.com/hhzeaawuf/image/upload/default.png', width: 30, height: 30, class: 'rounded-circle') %>
+        <%= image_tag('https://res.cloudinary.com/hbk8gkjwy/image/upload/v1573899056/default_p46v4q.png', width: 30, height: 30, class: 'rounded-circle') %>
         <% end %>
         </span>
         <%= link_to user.name, user_path(user), class: 'text-muted' %>
